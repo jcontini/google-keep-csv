@@ -1,0 +1,9 @@
+# # IDE files
+.idea/
+
+# Downloaded data
+takeout-*.zip
+Keep/*
+
+# Generated files
+notes_*.csv
