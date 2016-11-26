@@ -63,4 +63,4 @@ for file in files:
 
 print ('\n'+('-'*20)+'\nDone! %s notes saved to CSV.\n'+('-'*20)) % len(files)
 
-#Github: https://github.com/jcontini
+#Github: https://github.com/jcontini & https://github.com/PLNech
