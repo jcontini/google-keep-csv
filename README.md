@@ -1,5 +1,5 @@
 # Google Keep Scraper
-Apparently there's no simple way to export your notes from Google Keep to CSV. This does that from a Google Takeout archive.
+Apparently there's no simple way to export your notes from Google Keep to CSV. This script accepts the Keep folder Google Takeout archive, and outputs all of the Keep notes as lines in a single CSV file.
 
 ## Install
 1. Clone or download this repository
@@ -17,6 +17,7 @@ First we need to download all the Keep files through Google Takeout.
 
 ## Dependencies
 If you get an error, make sure these are installed first. This should be done automatically if you ran `pip install -r requirements.txt`
+
 - [Beautiful Soup 4](https://pypi.python.org/pypi/beautifulsoup4)
 - [DateUtils](https://pypi.python.org/pypi/dateutils)
 - [UnicodeCSV](https://pypi.python.org/pypi/unicodecsv)
