@@ -5,10 +5,6 @@ import os, bs4, glob, unicodecsv as csv
 from dateutil.parser import parse
 from datetime import datetime
 
-french2english = { u'à': 'at',
-        'janv.': 'january', u'févr.': 'february', 'mars': 'march', 'avr.': 'april',
-        'mai': 'may', 'juin':'june', 'juil.': 'july', u'août': 'august',
-        u'déc': 'dec'} # Mapping to handle french dates in Google Takeout's output
 files = glob.glob("Keep/*.html")
 notes = []
 
@@ -24,10 +20,6 @@ for file in files:
 
 	#Make Excel-Friendly date
 	googDate = soup.select('.heading')[0].getText().strip()
-	to_replace = [k for k in french2english.keys() if k in googDate]
-	if len(to_replace):
-		for k in to_replace:
-			googDate = googDate.replace(k, french2english[k])
 	xlDate = datetime.strftime(parse(googDate), '%m/%d/%Y %H:%M')
 
 	content = soup.select(".content")[0].getText()
@@ -46,21 +38,13 @@ for file in files:
 			"date": xlDate,
 			"title": soup.select('.title')[0].getText(),
 			"content": content
-
 		}
-
-		print "\n" + ('-'*15) + file + ('-'*15)
-		print 'Title: \"' + note['title'] + "\" // Date: " + note['date']
-		print ('-'*15) + '-'*int(len(file)) + ('-'*15)
-		print note['content']
-
 		writer.writerow([note['date'],note['title'],note['content'], file])
+		print('[' + note['date'] + ']' + note['title'])
 
 	#In case a note has a blank title or content, continue anyway
 	except Exception as e:
-	        print "Note %s has blank title or content: %s." % (file, e)
+		print("**NOTE** %s has blank title or content (%s)." % (file, e))
 		pass
 
-print ('\n'+('-'*20)+'\nDone! %s notes saved to CSV.\n'+('-'*20)) % len(files)
-
-#Github: https://github.com/jcontini & https://github.com/PLNech
+print('\n'+'-'*20 + '\nDone! %s notes saved to %s\n' % (len(files), csvout))
