@@ -15,9 +15,5 @@ First we need to download all the Keep files through Google Takeout.
 1. Run `python keep-scrape.py`
 1. All of your Keep notes should be exported to CSV in the same folder
 
-## Dependencies
-If you get an error, make sure these are installed first. This should be done automatically if you ran `pip install -r requirements.txt`
-
-- [Beautiful Soup 4](https://pypi.python.org/pypi/beautifulsoup4)
-- [DateUtils](https://pypi.python.org/pypi/dateutils)
-- [UnicodeCSV](https://pypi.python.org/pypi/unicodecsv)
+## Troubleshooting
+If you get an error about a missing dependency, be sure to run `pip install -r requirements.txt` prior to running the script so that it can download the dependencies needed.
