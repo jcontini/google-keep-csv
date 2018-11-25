@@ -11,8 +11,8 @@ First we need to download all the Keep files through Google Takeout.
 1. Go to [Google Takeout](https://takeout.google.com/settings/takeout)
 1. Make sure the 'Keep' checkbox is selected (you can deselect all others)
 1. Download and export the archive to a folder that has the 'Keep' folder
-1. Move the `Keep` folder into this folder, so it's alongside `keep-scrape.py`
-1. Run `python keep-scrape.py`
+1. Move the `Keep` folder into this folder, so it's alongside `keep.py`
+1. Run `python keep.py`
 1. All of your Keep notes should be exported to CSV in the same folder
 
 ## Troubleshooting
