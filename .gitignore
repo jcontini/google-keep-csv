@@ -1,9 +1,8 @@
 # IDE files
 .idea/
 
-# Downloaded data
-takeout-*.zip
+# Data
+*.csv
+*.zip
+*.html
 Keep/*
-
-# Generated files
-notes_*.csv
