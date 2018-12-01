@@ -39,6 +39,6 @@ for file in files:
 		"title": title,
 		"content": content
 	}
-	writer.writerow([file.split('/')[1], note['date'],note['title'],note['content']])
+	writer.writerow([file, note['date'],note['title'],note['content']])
 
 print('\n'+'-'*50 + '\nDone! %s notes saved to %s\n' % (len(files), csvout))
