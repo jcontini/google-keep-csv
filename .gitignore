@@ -1,5 +1,7 @@
 # IDE files
 .idea/
+.vscode/
+venv/
 
 # Data
 *.csv
