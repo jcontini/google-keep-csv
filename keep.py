@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# coding: utf-8
 import os, bs4, glob, csv
 from dateutil.parser import parse
 from datetime import datetime
+os.system('cls' if os.name == 'nt' else 'clear')
 
-files = glob.glob("Keep/*.html")
-notes = []
+files = glob.glob("Keep/**/*.html",recursive=True)
+if 'Keep/archive_browser.html' in files: files.remove('Keep/archive_browser.html')
 
 # Prep CSV file
 now = datetime.now()

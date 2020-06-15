@@ -1,7 +1,6 @@
-# IDE files
-.idea/
+# Dev
 .vscode/
-venv/
+Pipfile.lock
 
 # Data
 *.csv
